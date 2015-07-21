@@ -1,0 +1,63 @@
+\documentclass[fontsize=12pt,		% Font size
+			   toc=listof,			% List of... into table of contents % listofnumbered
+			   paper=A4,			% A4 paper
+			   headinclude=true,	% Include header into type area calculation
+			   footinclude=false,	% Don't include footer into type area calculation
+			   headsepline=true,	% Separating line between header and text
+			   footsepline=false,	% Separating line between footer and text
+			   DIV=calc,			% Auomatically calculate DIV
+			   %BCOR=15mm,			% Binding correction
+			   %twosided=true,
+			   %open=right
+			  ]{scrartcl}
+
+\usepackage[english,ngerman]{babel}
+\addto\extrasngerman{%
+ \def\subsubsectionautorefname{Unterabschnitt}%
+}
+\usepackage[utf8]{inputenc}
+\usepackage[babel,german=guillemets]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{textcomp}				% Avoids conflicts between siunitx and microtype
+\usepackage{siunitx}				% Allow for german decimals, e.g. 1,344 instead of 1.344 + other stuff
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+\usepackage{relsize}
+\usepackage{subfigure}
+
+% Package and options for nice inspirational quotes - takes one argument - the author of the quote.
+\makeatletter
+%\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+
+% Autorenangabe
+\newcommand\mychapter[2]{\chapter{#2}\vspace{-1.5em}\hspace{2.1em}\emph{#1}\vspace{1.5em}}
+\newcommand\mysection[2]{\section{#2}\vspace{-0.9em}\hspace{2.1em}\emph{#1}\vspace{1.5em}}
+\newcommand\mysubsection[2]{\subsection{#2}\vspace{-0.5em}\hspace{3.2em}\emph{#1}\vspace{1.3em}}
+
+% C#
+\newcommand{\CS}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-2}{\textbf{\#}}}}
+
+% PDF Metadaten
+
+\pdfinfo{
+ /Title (Untersuchung des Phänomens Crowdfunding)
+ /Author (Sarah Häfele)
+}
