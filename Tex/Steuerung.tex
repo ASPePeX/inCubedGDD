@@ -16,3 +16,17 @@ Als weiter intuitive Steuermethode um sich in der Welt von inCubed zu bewegen, i
 Wegpunkte werden im Spiel als grüne Sphären dargestellt. Aktionspunkte befinden sich auf mehr oder weniger auffälligen Objekten, was den Wimmelspielcharakter des Spiel ausmacht.
 
 Prototypentests haben ergeben, dass ein Zeitraum von ca. 2 Sekunden als passend empfunden wird um Aktionen auszulösen. Ein längerer Zeitraum führt dazu, dass der Spieler zu schnell einen Punkt als nicht relevant verwirft, bei einem kürzeren kommt es zu zufälligen Funden.
+
+\mysubsubsection{Alexander Scheurer}{Trigger und Aktionen}
+
+\subsubsection{Trigger und Aktionen}
+Anhand von zwei Prototypen wurde das Verhalten und die Anforderungen von Triggern für Weg- und Aktionspunkte getestet.
+
+Eine Komponente um beide Arten zu realisieren ist ein Rayemitter der sich am Kopfteil des Kamerarigs befindet und somit immer in die Kopfrichtung des Spielers zeigt. Der Raycast 'triggert' im Falle des Auftreffens auf eine entsprechendes Objekt die jeweilige Aktion.
+
+Im Fall eines Wegpunkts wird die Reise dorthin gestartet. Der Spieler hat während der Reise immer noch die Kontrolle über die Rotation und Neigung der Kamera. Der Prototyp wurde auch dazu verwendet entsprechende Ease-In und Ease-Out Methoden zu testen, um das Bewegungsgefühl so angenehm wie möglich zu machen.
+Die Entscheidung ist zwischen Potenz-, Winkel-, Exponentialfunktionen aus die sogenannte Smoothstep-Funktion gefallen.
+
+Aktionspunkt haben mehrere Fähigkeiten und können über den Unity-Inspector angepasst werden. Es können beliebig viele Gamestates geändert, das Gameobjekt zerstört, beliebige Prefabs instantiiert oder/und für komplexere Operationen eine Funktion in einem Event-Controller aufgerufen werden. Der Event-Controller ist hier die Sammlung angepasster Funktionen die speziell für einige wenige Trigger geschrieben werden.
+
+Ebenfalls können beide Triggerarten von beliebig vielen Gamestats abhängig sein.
