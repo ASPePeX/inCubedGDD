@@ -1,2 +1,13 @@
 \mysubsection{Sarah Häfele}{AI}
 
+Um die Welten lebendiger zu machen, müssen sich Kreaturen selbstständig bewegen können. Dafür erstellt ein Skript zufallsbasiert in einiger Entfernung zur Kreatur einen Wegpunkt, dreht sich in dessen Richtung und läuft darauf in vordefinierter Geschwindigkeit zu. Dabei wird vor jedem \enquote{Schritt} geprüft, ob ein Gegenstand im Weg stehen würde. Dies wird mit einem Raycast gelöst, der dem Skript meldet, falls er auf einen Collider trifft. Der Raycast muss hierbei die Form einer \enquote{Sphere} haben, da eine einfache Linie nicht die ganze Kollisionfläche der Kreatur abdecken würde. Steht etwas im Weg, wird ein neuer Wegpunkt in zufälliger Richtung erstellt und der Prozess fängt von vorne an.
+
+Würde dieser Prozess nonstop fortgeführt, sähe dies unnatürlich aus. Deshalb wird nach einer bestimmten Zeit ein \enquote{Idle-Mode} gestartet, der die Kreatur eine zufällige Zeit stehen lässt. Danach wird der \enquote{Walk-Mode} eine zufällige Zeit lang ausgeführt.
+
+Das Skript kann auf verschieden große Tiere angepasst werden, in dem die Geschwindigkeit angepasst wird. Somit haben zwar Kreaturen alle die gleichen Zyklen, aber für den Prototypen spart dies Zeit und die Welt sieht trotzdem etwas lebendiger aus.
+
+Für ein richtiges Spiel sollten am Ende spezifischere \enquote{Behaviors} je nach Kreatur-Art entstehen.
+
+Versuche mit verschiedenen Gegenständen zeigen, dass leblose Gegenstände andere Verhaltensweisen benötigen, da sie natürlich nicht eigenständig denken. Einfach Wegpunkte erstellen, auf die sich die Gegenstände ausrichten, wirkt unnatürlich und viel zu kontrolliert.
+
+Die simple AI wird zusätzlich durch Animationen unterstützt.
