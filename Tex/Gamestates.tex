@@ -1,2 +1,12 @@
 \mysubsection{Alexander Scheurer und Sarah Häfele}{Gamestates und Events}
 
+Die Aufgaben der einzelnen Welten sind in einfache Game States übersetzt, die den jeweiligen Stand der Rätsel definieren. Hierfür gibt es boolean-Variablen in der statischen Config-Klasse, von der aus jedes andere Skript zugreifen kann.
+
+Zum leichteren Verständnis der einzelnen Events und Game States liegt ein \enquote{State Machine}-Diagramm vor, welches im Anhang zu finden ist.
+
+Es gibt zwei verschiedene Trigger-Arten: Viewpoints, die eine Reise zum jeweiligen Standpunkt der Trigger einleiten und Eventtrigger, die Aktionen auslösen. Darunter fallen zum Beispiel die Aktivierung des Vulkans oder das Einsammeln von Gegenständen.
+Die Viewpoints sind durch eine grelle grüne Farbe kenntlich gemacht, da sie die wichtigen Reisepunkte darstellen. Hier wäre eine schönere Integration in die Spielwelt sinnvoll. Dies wird in diesem Prototyp aus Zeitgründen nicht verfolgt. Die Eventtrigger dagegen sind unsichtbar und liegen auf den entsprechenden Objekten.
+
+Zu Beginn des Spiels sind nur drei Viewpoints aktiv: die Mitte, das Gebirge und das Dorf. Da der Würfel dunkel ist, wird der Blick des Spielers auf den Viewpoint der Tutorial-Welt gelenkt. Damit soll der Spieler die ersten Aufgaben lösen. Erst nachdem alle Rätsel der Gebirgs- und Dorfwelt abgeschlossen wurden und der Gamestate \enquote{crystalActive} true ist, werden die Trigger der anderen Welten aktiv geschalten. Fortan kann der Spieler zu jeder Welt reisen und die folgenden Rätsel in beliebiger Reihenfolge starten.
+
+Wurden alle Rätsel gelöst, wird die Outro-Szene gestartet und das Spiel ist zu Ende.
