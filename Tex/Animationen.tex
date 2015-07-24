@@ -1,0 +1,17 @@
+\mysubsection{Sandra Beuck}{Animationen}
+
+Um dem Spiel mehr Leben einzuhauchen dient der Einsatz von Animationen. Alle Tiere und NPCs sind mit einer Kombination von klassischen Key-Frame-Animation und Bone- Animations versehen. Einige Objekte haben mehrere Stati. So lässt sich per Events per Skript ansteuern. So Befinden sich die NPCs im \enquote{Idle}-Modus bis eine bestimmte Aktion des Spielers den \enquote{Action}-Modus auslöst.
+
+Vorgehen:
+\begin{itemize}
+\item Erstellung eines Mashes aus mehreren Objekten
+\item Einfärben / Texturieren
+\item Zusammenfügen zu einem Objekt
+\item Textur Backen
+\item Joints einfügen
+\item Joints an das Objekt binden
+\item Animation mit Hilfe der Joints / Key-Frame Animation
+\item Export
+\end{itemize}
+
+Inverse Kinematik wirkt bei groben Polygonen sehr irritierend, deshalb genügt die einfache Animation um dem Spieler ein angenehmes Spielgefühl zu übermitteln. Die Probleme die durch das Binden an ein Objekt entstehen, könnten durch nachjustieren der Wichtung relativ einfach vermieden werden. In Anbetracht der kurzen Zeit haben jedoch viele Objekte, sich überschneidende Polygone im Inneren. Dadurch wird die Wichtung komplizierter und teils kaum Umsetzbar. Das Einbinden von Objekten in Unity mit Animation kann des Weiteren zu Störungen (fehlerhaftes Abspielen der Animation) führen, diese können mit erneuter Einbindung meist behoben werden. 
